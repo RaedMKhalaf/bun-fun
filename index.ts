@@ -1,8 +1,8 @@
 const server = Bun.serve({
-    port: 3000,
+    port: process.env.PORT || 5000,
     fetch() {
         return new Response("Hello world!")
     }
 })
 
-console.log(`Server running at ${server.port}`)
+console.log(`Server running at ${Bun.env.PORT}`)
